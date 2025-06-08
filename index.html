@@ -40,7 +40,10 @@
         // --- CONFIGURATION ---
         // Set the target date.
         // Format: YYYY-MM-DD
-        const targetDate = '2025-06-03';
+        const firstMatchDate = '2008-04-18'
+        const TrophyWonDate = '2025-06-03'
+        const mode = false 
+        // false = Lost
 
         // --- SCRIPT LOGIC ---
         // Do not edit below this line
@@ -63,7 +66,16 @@
             }
 
             try {
-                const startDate = new Date(targetDate);
+                let startDate = new Date();
+                if (mode){
+                
+                    startDate = new Date(TrophyWonDate);
+                }
+                else{
+                    startDate = new Date(firstMatchDate);
+                    
+                }
+                
                 const now = new Date();
                 
                 // Calculate the difference in milliseconds.
